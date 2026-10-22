@@ -1,0 +1,177 @@
+/* Keep the page clean, readable, and consistent across screen sizes. */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background: #f3f6fa;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #f3f6fa;
+}
+
+.page-shell {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+}
+
+.container {
+    width: min(100%, 500px);
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+}
+
+.page-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.container h1 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    line-height: 1.15;
+}
+
+.intro {
+    margin: 12px 0 0;
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.welcome-form {
+    text-align: left;
+}
+
+.welcome-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    color: #111827;
+    font: inherit;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input[type="text"]::placeholder {
+    color: #9ca3af;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+    flex-shrink: 0;
+    padding: 12px 22px;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    background: #2563eb;
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+    outline-offset: 2px;
+}
+
+.message {
+    margin: 24px 0 0;
+    padding: 13px 15px;
+    color: #166534;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 0;
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #16a34a;
+    border-radius: 50%;
+}
+
+footer {
+    margin-top: 20px;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    .page-shell {
+        padding: 20px 14px;
+    }
+
+    .container {
+        padding: 30px 22px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+# Deployment: runs 2 replicas of the app pod
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-test-app
+spec:
+  replicas: 2
+  # Selector: which pods this Deployment manages (must match template labels)
+  selector:
+    matchLabels:
+      app: kubernetes-test-app
+  # Pod template: labels + container definition
+  template:
+    metadata:
+      labels:
+        app: kubernetes-test-app
+    spec:
+      containers:
+      - name: kubernetes-test-app
+        # Local image loaded into Minikube, so never pull from a registry
+        image: k8s-test-app:latest
+        imagePullPolicy: Never
+        # image: <your-dockerhub-username>/k8s-test-app:latest
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 5000
+---
+# Service: stable endpoint routing port 8080 to the pods' port 5000 /port mapping
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-test-app
+spec:
+  selector:
+    app: kubernetes-test-app
+  ports:
+  - port: 8080
+    targetPort: 5000
