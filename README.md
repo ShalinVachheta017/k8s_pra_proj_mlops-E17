@@ -122,6 +122,7 @@ python app.py        # open http://localhost:5000
 | [KUBERNETES_TUTORIAL.md](KUBERNETES_TUTORIAL.md) | The full 14-step walkthrough, with troubleshooting |
 | [SELF_HEALING_EXPLAINED.md](SELF_HEALING_EXPLAINED.md) | What happens when a pod is deleted, and why |
 | [LOAD_BALANCING_EXPLAINED.md](LOAD_BALANCING_EXPLAINED.md) | How traffic is shared, how I tested it, what it means |
+| [REAL_WORLD_KUBERNETES.md](REAL_WORLD_KUBERNETES.md) | CI/CD, where real clusters run, AWS vs Azure vs Google, and an ML serving example |
 
 ## 🗂️ Project structure
 

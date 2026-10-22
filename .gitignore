@@ -23,3 +23,7 @@ desktop.ini
 # Unused screenshots (not referenced in the docs)
 images/localhost.png
 images/postman-load-test.png
+
+# Private notes
+REFERENCE_REPO_NOTES.md
+REAL_WORLD_KUBERNETES.md
